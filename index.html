@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minnie Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="exit">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <p>Please read and agree to the terms and conditions before using the site.</p>
+            <textarea rows="10" readonly>
+Effective Date: augusut 2024
+Welcome to Mousewire Timer. By using our timer and tracker website (the "Service"), you 
+gree to these Terms and Conditions ("Terms"). If you do not agree, do not use the Service.
+
+                **1. Usage**
+
+                - **Permitted Use:** The Service is for use exclusively within [Your Company Name] 
+                premises. Unauthorized use outside these premises is prohibited.
+                - **Prohibited Actions:** Do not interfere with the Service, attempt unauthorized access,   
+                or use the Service for commercial purposes without permission.
+
+                **2. Data and Liability**
+
+                - **Data Management:** We do not guarantee the security or accuracy of data. You are 
+                responsible for your own data backup.
+                - **Liability Limitation:** We are not liable for any data loss, damage, or other issues    
+                 resulting from your use of the Service.
+
+                **3. Intellectual Property**
+
+                - **Ownership:** All rights to the Service and its content are owned by us. You have a      
+                limited, non-transferable license to use it according to these Terms.
+
+                **4. Privacy**
+
+                - **Privacy Policy:** Our Privacy Policy [Link to Privacy Policy] applies. Review it to     
+                understand how we handle your information.
+
+                **5. Changes**
+
+                - **Modifications:** We may update these Terms. Continued use of the Service after changes 
+                constitutes acceptance of the new Terms.
+
+                **6. Contact**
+
+                - **Inquiries:** For questions and suggestions, contact us at:
+
+                Developer  
+                Email & Slack: flywire611raffy.acosta@gmail.com ]
+            </textarea>
+            <div class="terms-footer">
+                <input type="checkbox" id="termsCheckbox">
+                <label for="termsCheckbox">I agree to the terms and conditions</label>
+                <button id="agreeBtn" disabled>Agree</button>
+            </div>
+        </div>
+    </div>
+
+    
+        <!-- Existing content here -->
+    </div>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Minnie Tracker</h1>
+            <div class="controls">
+                <button id="resetBtn">RESET</button>
+                <input type="file" id="uploadFile" style="display: none;">
+                <button id="settingsBtn" title="Instructions">
+                    <img src="Assets/aa.png" alt="Instructions" style="width: 10px; height: 10px;">
+                </button>
+                
+
+            </div>
+        </header>
+
+        <div class="top-bar">
+            <div class="dropdown-section">
+                <label for="dayDropdown">Day:</label>
+                <select id="dayDropdown" required>
+                    <option value="" disabled selected>Select Day</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </div>
+            <div class="dropdown-section">
+                <label for="statusDropdown">Status:</label>
+                <select id="statusDropdown" required>
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="Dendrites">Dendrites</option>
+                    <option value="Axon">Axon</option>
+                    <option value="Null">Null</option>
+                </select>
+            </div>
+            <div class="time-display">
+                <p id="currentTime">ACTUAL TIME AND DATE</p>
+            </div>
+        </div>
+
+        <div class="timer-section">
+            <p id="timerDisplay">00:00:00.0</p>
+            <div class="timer-buttons">
+                <button id="startBtn">Start</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="wipBtn">WIP</button>
+                <button id="doneBtn">Done</button>
+            </div>
+        </div>
+
+        <div class="logs-section">
+            <p id="logsTitle">LOGS</p>
+            <div id="logEntries"></div>
+        </div>
+
+        <div class="total-hours-section">
+            <p id="totalHours">TOTAL HOURS SPENT ON THE DAY 00:00:00</p>
+        </div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Instructions</h2>
+            <p>1. Select a Day and Status before starting the timer.</p>
+            <p>2. Use the Start button to begin tracking time.</p>
+            <p>3. Pause the timer whenever needed; the time will accumulate.</p>
+            <p>4. Use the WIP button to log your progress with a screenshot.</p>
+            <p>5. Reset clears all data for the selected day.</p>
+        </div>
+    </div>
+
+    <!-- Add html2canvas script -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

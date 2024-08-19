@@ -1,0 +1,384 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: White;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("Assets/Neuron-Brain-Cell-Disease.jpg");
+  
+}
+
+.container {
+  background-color: white;
+  padding: 16px;
+  width: 30%;
+  max-width: none;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #6e6e6e;
+  color: #ffffff;
+  border-radius: 8px 8px 0 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.controls button {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.controls button:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0;
+}
+
+/* Add this under the existing styles */
+
+/* Dropdown Section for Status */
+.dropdown-section {
+  width: 20%;
+  margin-right: 8px;
+}
+
+.dropdown-section select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  background: #ddd;
+}
+
+
+.time-display {
+  text-align: center;
+  width: 36%;
+  background: #ddd;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 18px;
+}
+
+/* Timer Section */
+.timer-section {
+  text-align: center;
+  margin-bottom: 5px;
+  flex-grow: 1;
+}
+
+#timerDisplay {
+  font-size: 32px;
+  font-weight: 600;
+  background: #000000;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  color: red;
+}
+
+.timer-buttons button {
+  margin: 0 4px;
+  padding: 10px 16px;
+  border: none;
+  background: #787878;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.3s;
+}
+
+.timer-buttons button:hover {
+  background: #ff0000;
+  color: white;
+}
+
+/* Logs Section */
+.logs-section {
+  margin-top: 10px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.logs-section #logsTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#logEntries {
+  padding: 5px;
+  border-radius: 4px;
+  background: #f7f7f7;
+  min-height: 120px;
+  max-height: 120px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* Total Hours Section */
+.total-hours-section {
+  text-align: center;
+  background: #6e6e6e;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 0 0 8px 8px;
+  margin-top: 10px;
+}
+
+.total-hours-section p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Modal styling */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 100%;
+    height: auto;
+  }
+
+  .header {
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .controls button {
+    margin-left: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+  }
+
+  .dropdown-section,
+  .time-display {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .logs-section {
+    margin-top: 8px;
+    padding: 8px;
+  }
+
+  .total-hours-section {
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  .total-hours-section p {
+    font-size: 14px;
+  }
+
+  #timerDisplay {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .timer-buttons button {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+}
+
+
+/*Security */
+
+#timerDisplay {
+    pointer-events: none;
+}
+
+.timer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+}
+
+#currentTime {
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+}
+
+
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 600px;
+  position: relative;
+}
+
+.exit {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.exit:hover,
+.exit:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.terms-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.terms-footer input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.terms-footer button {
+  margin-left: auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.terms-footer button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* Container styling */
+.container {
+  width: 30%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Fullscreen mode */
+@media screen and (max-width: 768px) {
+  .container {
+      width: 100%;
+  }
+}
