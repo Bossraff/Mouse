@@ -5,6 +5,7 @@ let isRunning = false;
 let logEntries = [];
 let interval = 100;
 let autoPause = false;
+let lastUpdateTime = Date.now(); // Track the last time the timer was updated
 let selectedDay = localStorage.getItem('selectedDay') || '';
 let selectedStatus = localStorage.getItem('selectedStatus') || '';
 let lastPausedMilliseconds = 0; // Tracks the last paused time to avoid double adding
@@ -60,6 +61,7 @@ document.getElementById('startBtn').addEventListener('click', function () {
         if (!isRunning) {
             isRunning = true;
             logStartEvent();
+            lastUpdateTime = Date.now(); // Set the start time
             timer = setInterval(updateTimer, interval);
         }
     } else {
@@ -110,9 +112,13 @@ setInterval(updateCurrentTime, 1000);
 
 // Update the timer display
 function updateTimer() {
-    totalMilliseconds += interval;
+    let now = Date.now(); // Current time
+    let elapsed = now - lastUpdateTime; // Time since last update
+    totalMilliseconds += elapsed; // Add the elapsed time
+    lastUpdateTime = now; // Update the last time the function was called
     displayTime(totalMilliseconds);
 }
+
 
 // Display the time
 function displayTime(milliseconds) {
@@ -400,4 +406,16 @@ document.addEventListener('keydown', function(e) {
         (e.ctrlKey && e.key === 'U')) {
         e.preventDefault();
     }
+});
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    // Automatically fade out and remove the announcement after 5 seconds
+    setTimeout(function() {
+        var announcement = document.getElementById('update-announcement');
+        announcement.classList.add('fade-out');
+    }, 8000);
 });
