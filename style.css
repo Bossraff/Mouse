@@ -9,7 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   background-image: url("Neuron-Brain-Cell-Disease.jpg");
-  
+
 }
 
 .container {
@@ -381,4 +381,47 @@ textarea {
   .container {
       width: 100%;
   }
+}
+
+
+
+
+
+
+/* Position the announcement at the top left */
+#update-announcement {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #4caf50; /* Green background for success */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it appears on top */
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Loader animation */
+.loader {
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: loading 8s linear forwards;
+}
+
+/* Keyframes for loader shrinking */
+@keyframes loading {
+    from { width: 100%; }
+    to { width: 0%; }
+}
+
+/* Fade out the entire announcement */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out; /* Smooth fade-out for the announcement */
+    visibility: hidden;
 }
