@@ -425,3 +425,30 @@ textarea {
     transition: opacity 0.5s ease-out; /* Smooth fade-out for the announcement */
     visibility: hidden;
 }
+
+
+
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.popup-content {
+  padding: 10px;
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
+  color: #000;
+}
+
