@@ -419,3 +419,17 @@ window.addEventListener('DOMContentLoaded', function() {
         announcement.classList.add('fade-out');
     }, 8000);
 });
+
+
+
+
+function showPopup() {
+  document.getElementById("pet-popup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("pet-popup").style.display = "none";
+}
+
+// Show the popup after a delay (e.g., 2 seconds)
+setTimeout(showPopup, 2000);
