@@ -390,23 +390,23 @@ window.onload = function() {
 
 
 // Disable right-click
-//document.addEventListener('contextmenu', function(e) {
-//    e.preventDefault();
-//});
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
 
 // Disable text selection
-//document.addEventListener('selectstart', function(e) {
-//    e.preventDefault();
-//});
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
 
-// Disable key combinations like F12 and Ctrl+Shift+I (common shortcuts for dev tools)
-//document.addEventListener('keydown', function(e) {
-   // if (e.key === 'F12' || 
-  //      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
-   //     (e.ctrlKey && e.key === 'U')) {
-   //     e.preventDefault();
-  //  }
-//});
+//Disable key combinations like F12 and Ctrl+Shift+I (common shortcuts for dev tools)
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) || 
+        (e.ctrlKey && e.key === 'U')) {
+        e.preventDefault();
+    }
+});
 
 
 
